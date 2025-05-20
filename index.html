@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shravan Shinde | Portfolio</title>
+
+    <style>
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+            font-family: 'Poppins', sans-serif;
+
+        }
+
+        body {
+
+            background: linear-gradient(135deg, #e0eafc, #cfdef3);
+
+        }
+
+        /* Navigation Bar */
+
+        nav {
+
+            background: rgba(255, 255, 255, 0.95);
+
+            padding: 20px 60px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            position: fixed;
+
+            width: 100%;
+
+            top: 0;
+
+            z-index: 1000;
+
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+        }
+
+        .nav-links {
+
+            display: flex;
+
+            gap: 30px;
+
+        }
+
+        .nav-links button {
+
+            background: none;
+
+            border: none;
+
+            font-size: 18px;
+
+            cursor: pointer;
+
+            color: #1e3a8a;
+
+            font-weight: 600;
+
+            position: relative;
+
+            transition: color 0.3s ease;
+
+        }
+
+        .nav-links button::after {
+
+            content: '';
+
+            position: absolute;
+
+            width: 0;
+
+            height: 2px;
+
+            bottom: -5px;
+
+            left: 0;
+
+            background-color: #3b82f6;
+
+            transition: width 0.3s ease;
+
+        }
+
+        .nav-links button:hover::after {
+
+            width: 100%;
+
+        }
+
+        .nav-links button:hover {
+
+            color: #3b82f6;
+
+        }
+
+        .contact-btn {
+
+            background: linear-gradient(45deg, #3b82f6, #60a5fa);
+
+            padding: 10px 20px;
+
+            border-radius: 25px;
+
+            font-size: 16px;
+
+            font-weight: 600;
+
+            color: white;
+
+            cursor: pointer;
+
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        }
+
+        .contact-btn:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+
+        }
+
+        /* Hero Section */
+
+        .hero-section {
+
+            display: flex;
+
+            min-height: 100vh;
+
+            background: linear-gradient(45deg, #1e3a8a, #3b82f6);
+
+            color: white;
+
+            align-items: center;
+
+            padding: 80px 60px;
+
+        }
+
+        .hero-text {
+
+            width: 60%;
+
+            animation: slideInLeft 1s ease-out;
+
+        }
+
+        .hero-text h1 {
+
+            font-size: 48px;
+
+            margin-bottom: 20px;
+
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+
+        }
+
+        .hero-text p {
+
+            font-size: 20px;
+
+            line-height: 1.6;
+
+            margin-bottom: 30px;
+
+            opacity: 0.9;
+
+        }
+
+        /* Hero Image */
+
+        .hero-image {
+
+            position: absolute;
+
+            right: 100px;
+
+            width: 350px;
+
+            height: 350px;
+
+            object-fit: cover;
+
+            border-radius: 15px;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+            transition: transform 0.3s ease;
+
+        }
+
+        .hero-image:hover {
+
+            transform: scale(1.05);
+
+        }
+
+        /* Animations */
+
+        @keyframes slideInLeft {
+
+            from {
+
+                opacity: 0;
+
+                transform: translateX(-50px);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: translateX(0);
+
+            }
+
+        }
+
+        /* Content Sections */
+
+        .content-section {
+
+            background: rgba(255, 255, 255, 0.95);
+
+            margin: 40px 60px;
+
+            padding: 40px;
+
+            border-radius: 15px;
+
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+
+            transition: transform 0.3s ease;
+
+        }
+
+        .content-section:hover {
+
+            transform: translateY(-5px);
+
+        }
+
+        .content-section h2 {
+
+            font-size: 32px;
+
+            color: #1e3a8a;
+
+            margin-bottom: 20px;
+
+        }
+
+        .content-section p {
+
+            font-size: 18px;
+
+            color: #4b5563;
+
+            line-height: 1.6;
+
+        }
+
+        /* Footer */
+
+        footer {
+
+            text-align: center;
+
+            padding: 20px;
+
+            background: linear-gradient(45deg, #1e3a8a, #3b82f6);
+
+            color: white;
+
+            font-size: 16px;
+
+        }
+
+        footer a {
+
+            color: #93c5fd;
+
+            text-decoration: none;
+
+            transition: color 0.3s ease;
+
+        }
+
+        footer a:hover {
+
+            color: #ffffff;
+
+        }
+
+        /* Responsive Design */
+
+        @media (max-width: 768px) {
+
+            .hero-section {
+
+                flex-direction: column;
+
+                padding: 40px 20px;
+
+                text-align: center;
+
+            }
+
+            .hero-text {
+
+                width: 100%;
+
+            }
+
+            .hero-image {
+
+                position: static;
+
+                width: 250px;
+
+                height: 250px;
+
+                margin-top: 20px;
+
+            }
+
+            .nav-links {
+
+                gap: 15px;
+
+            }
+
+            .nav-links button {
+
+                font-size: 16px;
+
+            }
+
+            .contact-btn {
+
+                padding: 8px 15px;
+
+                font-size: 14px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <nav>
+
+        <div class="nav-links">
+
+            <button onclick="updateContent('about')">About</button>
+
+            <button onclick="updateContent('skills')">Skills</button>
+
+            <button onclick="updateContent('Certificate')">Certificate</button>
+
+            <button onclick="updateContent('projects')">Projects</button>
+
+        </div>
+
+        <button class="contact-btn" onclick="updateContent('contact')">Contact</button>
+
+    </nav>
+
+    <!-- Hero Section -->
+
+    <div class="hero-section">
+
+        <div class="hero-text">
+
+            <h1 id="section-heading">Shravan Shinde's Portfolio</h1>
+
+            <p id="section-content">
+
+                Welcome to my portfolio! I'm a dedicated Computer Science and Engineering student at MIT Academy of Engineering (MITAoE), passionate about leveraging technology to solve real-world problems. Explore my journey, skills, and projects to see how I blend creativity with technical expertise.
+
+            </p>
+
+        </div>
+
+        <img class="hero-image" src="photo.jpg" alt="Shravan Shinde">
+
+
+    </div>
+
+    <!-- Footer -->
+
+    <footer>
+
+        © 2025 Shravan Shinde. All Rights Reserved. | Designed by <a href="#">Shravan Shinde</a>
+
+    </footer>
+
+    <script>
+
+        function updateContent(section) {
+
+            let heading = "Shravan Shinde's Portfolio";
+
+            let content = "Welcome to my portfolio! I'm a dedicated Computer Science and Engineering student at MIT Academy of Engineering (MITAoE), passionate about leveraging technology to solve real-world problems. Explore my journey, skills, and projects to see how I blend creativity with technical expertise.";
+
+            if (section === "about") {
+
+                heading = "About Me";
+
+                content = "I am Shravan Shinde, a First-year Computer Science and Engineering student at MIT Academy of Engineering (MITAoE), Pune. My passion for technology stems from a curiosity to understand how systems work and a drive to create solutions that make a difference. Beyond academics, I actively participate in coding competitions, tech fests, and hackathons.  I am also constantly exploring new technologies and frameworks to stay ahead in the ever-evolving tech landscape. My goal is to contribute to innovative projects that address societal challenges while continuing to grow as a technologist.";
+
+            } else if (section === "skills") {
+
+                heading = "My Skills";
+
+                content = "I have developed a diverse skill set that spans multiple domains of technology and creativity. My programming expertise includes Python, C++, C, with a strong focus on writing clean, efficient, and scalable code. In web development, I am proficient in HTML, CSS, Additionally, I have experience in animation and video editing using tools like Adobe After Effects and Premiere Pro, which I use to create engaging visual content.";
+
+            } else if (section === "Certificate") {
+
+                heading = "Certificates";
+
+                content = "I am committed to continuous learning and have earned several certifications to validate my skills. These include:<br><ul><li><b>Linux Essentials</b> from Great Learning and simplelearn demonstrating proficiency in Linux system administration and command-line operations.</li><li><b>Python for Data Science</b> from Coursera, focusing on data analysis and visualization using Python libraries like Pandas and Matplotlib.</li><li><b>Web Development Bootcamp</b></li></ul>These certifications reflect my dedication to building a strong technical foundation.";
+
+            } else if (section === "projects") {
+
+                heading = "Projects";
+
+                content = "I have worked on several projects that showcase my ability to apply technology to real-world problems:<br><ul><li><b>Canteen Improvement Analysis System</b>: Developed a data-driven solution to optimize canteen operations at MITAoE. </li><li><b>Water Treatment Project</b>: Designed a prototype for a cost-effective water purification system to address water scarcity in rural areas.</li><li><b>Personal Portfolio Website</b>: Created this interactive portfolio using HTML, CSS, to showcase my skills, projects, and achievements in a visually appealing manner.</li></ul>These projects reflect my ability to combine technical skills with creative problem-solving.";
+
+            } else if (section === "contact") {
+
+                heading = "Get in Touch";
+
+                content = "I am always open to connecting with like-minded individuals, collaborators, or potential employers. Reach out to me via:<br><ul><li>Email: <a href='mailto:shravanshinde2976@gmail.com' style='color: #93c5fd;'>shravanshinde2976@gmail.com</a></li><li>Contact No: <a href='tel:+919834402507' style='color: #93c5fd;'>9834402507</a></li></ul>Feel free to drop me a message to discuss projects, opportunities, or just to share ideas!";
+
+            }
+
+            document.getElementById("section-heading").innerHTML = heading;
+
+            document.getElementById("section-content").innerHTML = content;
+
+        }
+
+    </script>
+
+</body>
+
+</html>
